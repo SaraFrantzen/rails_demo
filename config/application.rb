@@ -28,3 +28,4 @@ module RailsDemo
 		generate.controller_specs false
 	end
 end
+end
