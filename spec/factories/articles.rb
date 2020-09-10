@@ -4,3 +4,6 @@ FactoryBot.define do
     content { "MyText"}
   end
 end
+
+
+@article
