@@ -6,7 +6,7 @@ feature 'Visitor can edit articles' do
     before do    
     visit article_path(test_article)
         click_on 'Edit Article'
-        fill_in 'Title', with: 'this is bette'
+        fill_in 'article[title]', with: 'This is a much better title'
         click_on 'Update Article'
     end
 
