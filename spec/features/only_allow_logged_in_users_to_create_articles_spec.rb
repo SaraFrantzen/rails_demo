@@ -1,11 +1,21 @@
 RSpec.describe "User authentication required for accessing 'Write Article',", type: feature do
-  feature "user should not be able to write articles without logging in" do
+  feature "visitors should be able to see articles without logging in" do
     before do
       visit "/"
     end
 
     it "Write Article link is not visible" do
-      expect(page).to_not have_content "Write Article"
+      expect(page).to have_content "Write Article"
+    end
+  end
+
+  feature "User should not be able to write articles without logging in" do
+    before do
+       visit "/"
+       click_on "Write Article"
+    end
+    it "Write Article require login" do
+      expect(page).to have_content "Log in"
     end
   end
 
